@@ -84,6 +84,32 @@
 </body>
 
 <script>
+
+let characters = [];
+let list = document.getElementById('list');
+let search = document.getElementById('input');
+fetch('https://www.swapi.co/api/people')
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(response) {
+        characters.push(...response.results);
+        render();
+    })
+
+function render() {
+    let html = characters.map(num => `<li>${num}</li>`).join('');
+}
+
+function filterText() {
+    let filtered;
+    for (i = 0; i <characters.length; i++) {
+        
+    }
+}
+
+
+
 </script>
 
 </html>
